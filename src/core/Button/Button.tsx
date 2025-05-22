@@ -35,7 +35,7 @@ export const Button = (props: ButtonProps) => {
     ...rest
   } = props;
 
-  const borderRadius = useMemo(() => (type === 'rounded' ? 30 : 8), []);
+  const borderRadius = useMemo(() => (type === 'rounded' ? 30 : 8), [type]);
 
   const backgroundColor = useMemo(() => {
     switch (intent) {

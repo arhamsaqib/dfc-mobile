@@ -11,6 +11,7 @@ import {FormInput} from '@src/core/form/Form/FormInput';
 import {View} from 'react-native';
 import {FormCheckbox} from '@src/core/form/Form/FormCheckbox';
 import {FormSelect} from '@src/core/form/Form/FormSelect';
+import {Button} from '@src/core/Button';
 
 function defineLoginForm() {
   return new FormGroup({
@@ -23,7 +24,7 @@ function defineLoginForm() {
       isRequired: true,
     }),
     role: formControl<string>({
-      placeholder: 'Role',
+      placeholder: '- You are a -',
       isRequired: true,
     }),
     password: formControl<boolean>({
@@ -79,6 +80,7 @@ export const RegisterScreen = () => {
           secureTextEntry
           type="rounded"
         />
+        <Button title="REGISTER" intent="dark" type="rounded" />
       </View>
     </ScreenWrapper>
   );

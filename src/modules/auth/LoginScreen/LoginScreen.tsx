@@ -13,6 +13,7 @@ import {FormCheckbox} from '@src/core/form/Form/FormCheckbox';
 import {ScreenProps} from '@src/constants/types';
 import {Screens} from '@src/constants/screens';
 import {AbsoluteComponent} from '@src/components/AbsoluteComponent';
+import {Button} from '@src/core/Button';
 
 function defineRegisterForm() {
   return new FormGroup({
@@ -67,6 +68,7 @@ export const LoginScreen = (props: ScreenProps) => {
             </View>
             <Text style={{color: Theme.primary}}>Forget Password?</Text>
           </View>
+          <Button title="LOGIN" intent="dark" type="rounded" />
         </View>
       </ScreenWrapper>
       <AbsoluteComponent>
