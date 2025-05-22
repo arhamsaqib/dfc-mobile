@@ -98,7 +98,7 @@ export const TextInput = (props: MyTIProps) => {
             style={{
               height: '40%',
               alignSelf: 'center',
-              width: 3,
+              width: 2,
               backgroundColor: Theme.black,
             }}
           />

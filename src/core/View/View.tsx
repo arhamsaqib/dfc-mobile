@@ -13,7 +13,6 @@ export interface MyViewProps extends ViewProps {
   border?: boolean;
   transparent?: boolean;
   fullWidth?: boolean;
-  onPress?(): void;
 }
 
 export const View = (props: MyViewProps) => {
@@ -25,7 +24,6 @@ export const View = (props: MyViewProps) => {
     transparent = false,
     fullWidth = false,
     style,
-    onPress,
     ...rest
   } = props;
 
@@ -44,10 +42,6 @@ export const View = (props: MyViewProps) => {
       {children}
     </CoreView>
   );
-
-  if (onPress) {
-    return <TouchableOpacity onPress={onPress}>{content}</TouchableOpacity>;
-  }
 
   return content;
 };

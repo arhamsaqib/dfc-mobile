@@ -5,16 +5,17 @@ import {
   ScrollView,
   ScrollViewProps,
   StyleSheet,
+  View,
+  ViewProps,
 } from 'react-native';
-import {MyViewProps, View} from '../View';
 
-interface TabContentProps extends MyViewProps, ScrollViewProps {
+interface TabContentProps extends ViewProps, ScrollViewProps {
   backgroundColor?: string;
 }
 
 export const TabContent = memo((props: TabContentProps) => {
   const {children, backgroundColor = false, refreshControl, ...left} = props;
-  const {style, transparent = false, ...rest} = left;
+  const {style, ...rest} = left;
   return (
     <KeyboardAvoidingView
       style={{flex: 1, backgroundColor: 'transparent'}} // Ensure the view takes up full space
@@ -25,9 +26,7 @@ export const TabContent = memo((props: TabContentProps) => {
         keyboardShouldPersistTaps="handled"
         refreshControl={refreshControl}
         style={[!!backgroundColor && {backgroundColor: backgroundColor}]}>
-        <View {...rest} transparent={transparent} style={[styles.main, style]}>
-          {children}
-        </View>
+        <View style={[styles.main, style]}>{children}</View>
       </ScrollView>
     </KeyboardAvoidingView>
   );

@@ -26,11 +26,7 @@ export const FormCheckbox = <T,>({control, ...props}: FormCheckboxProps<T>) => {
   return (
     <View style={styles.main}>
       <Checkbox onValueChange={onChangeInput} />
-      {!customText && (
-        <Text white style={{fontSize: 13}}>
-          {label}
-        </Text>
-      )}
+      {!customText && <Text style={{fontSize: 13}}>{label}</Text>}
       {customText && customText}
     </View>
   );
