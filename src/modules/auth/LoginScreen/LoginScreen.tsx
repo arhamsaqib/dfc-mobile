@@ -68,7 +68,14 @@ export const LoginScreen = (props: ScreenProps) => {
             </View>
             <Text style={{color: Theme.primary}}>Forget Password?</Text>
           </View>
-          <Button title="LOGIN" intent="dark" type="rounded" />
+          <Button
+            title="LOGIN"
+            intent="dark"
+            type="rounded"
+            onPress={() =>
+              navigation.replace(Screens.navigators.driverMainTabs)
+            }
+          />
         </View>
       </ScreenWrapper>
       <AbsoluteComponent>
