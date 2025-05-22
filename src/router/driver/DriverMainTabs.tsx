@@ -7,6 +7,7 @@ import {Screens} from '@src/constants/screens';
 import {Theme} from '@src/constants/colors';
 import {Icon} from '@src/core/Icon';
 import {Test} from '@src/modules/driver/Test';
+import {DriverDashboardScreen} from '@src/modules/driver/Dashboard/DriverDashboardScreen';
 
 const Tabs = createBottomTabNavigator();
 interface TabBarOptionsProps {
@@ -55,7 +56,7 @@ export const DriverMainTabs = () => {
     <Tabs.Navigator screenOptions={screenOptions}>
       <Tabs.Screen
         name={Screens.driverDashboard}
-        component={Test}
+        component={DriverDashboardScreen}
         options={tabBarOptions({iconName: 'bar-chart'})}
         initialParams={{open: true}}
       />
