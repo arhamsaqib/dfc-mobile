@@ -1,4 +1,4 @@
-import {COLORS} from '@src/constants/colors';
+import {Theme} from '@src/constants/colors';
 import {Icon} from '@src/core/Icon';
 import {useModal} from '@src/core/ModalContext';
 import {Text} from '@src/core/Text';
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     paddingHorizontal: 10,
-    backgroundColor: COLORS.grey,
+    backgroundColor: Theme.button_light,
+
     marginBottom: 5,
     borderRadius: 5,
     flexDirection: 'row',

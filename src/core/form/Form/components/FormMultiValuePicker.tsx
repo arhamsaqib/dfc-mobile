@@ -1,4 +1,3 @@
-import {COLORS} from '@src/constants/colors';
 import {Icon} from '@src/core/Icon';
 import {useModal} from '@src/core/ModalContext';
 import {Text} from '@src/core/Text';
@@ -7,6 +6,7 @@ import React, {useCallback, useMemo} from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {FormSelectItem} from './FormSingleValuePicker';
 import {Button} from '@src/core/Button';
+import {Theme} from '@src/constants/colors';
 
 interface ItemProps {
   item: FormSelectItem;
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     paddingHorizontal: 10,
-    backgroundColor: COLORS.grey,
+    backgroundColor: Theme.button_light,
     marginBottom: 5,
     borderRadius: 5,
     flexDirection: 'row',

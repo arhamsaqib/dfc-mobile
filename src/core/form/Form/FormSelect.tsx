@@ -1,4 +1,4 @@
-import {Icon} from '@src/core/Icon';
+import {CustomIconProps, Icon} from '@src/core/Icon';
 import {useModal} from '@src/core/ModalContext';
 import {Text} from '@src/core/Text';
 import {MyTIProps, TextInput} from '@src/core/TextInput';
@@ -21,10 +21,11 @@ interface FormSelect<T> {
   clearable?: boolean;
   disabled?: boolean;
   light?: boolean;
+  icon?: CustomIconProps;
 }
 
 export const FormSelect = <T,>({control, ...props}: FormSelect<T>) => {
-  const {type, items, clearable, disabled} = props;
+  const {type, items, clearable, disabled, icon} = props;
 
   const isMultiple = type === 'multiple';
   const isRequired = control.config.isRequired;
@@ -87,14 +88,38 @@ export const FormSelect = <T,>({control, ...props}: FormSelect<T>) => {
       }}
       style={[styles.main, props.light && styles.light]}>
       <>
+        {icon && (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              height: '100%',
+              marginLeft: 5,
+            }}>
+            <Icon {...icon} />
+            <View
+              style={{
+                height: '40%',
+                alignSelf: 'center',
+                width: 2,
+                backgroundColor: Theme.black,
+                marginLeft: 12,
+              }}
+            />
+          </View>
+        )}
         {!hasValue && (
-          <Text numberOfLines={1} style={styles.placeholder}>
+          <Text
+            numberOfLines={1}
+            style={[styles.placeholder, icon && {marginLeft: 10}]}>
             {title}
             {isRequired ? '*' : ''}
           </Text>
         )}
         {hasValue && (
-          <Text numberOfLines={1} style={styles.value}>
+          <Text
+            numberOfLines={1}
+            style={[styles.value, icon && {marginLeft: 10}]}>
             {getLabel()}
           </Text>
         )}
@@ -115,15 +140,15 @@ export const FormSelect = <T,>({control, ...props}: FormSelect<T>) => {
 
 const styles = StyleSheet.create({
   main: {
-    height: 40,
+    height: 48,
     width: '100%',
     backgroundColor: Theme.field_bg,
-    borderRadius: 10,
+    borderRadius: 30,
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
     paddingHorizontal: 10,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
   placeholder: {
     color: Theme.inactive_text,
