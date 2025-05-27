@@ -6,8 +6,8 @@ import {
 import {Screens} from '@src/constants/screens';
 import {Theme} from '@src/constants/colors';
 import {Icon} from '@src/core/Icon';
-import {Test} from '@src/modules/driver/Test';
 import {DriverDashboardScreen} from '@src/modules/driver/Dashboard/DriverDashboardScreen';
+import {DriverOrderStack} from './DriverOrderStack';
 
 const Tabs = createBottomTabNavigator();
 interface TabBarOptionsProps {
@@ -61,26 +61,26 @@ export const DriverMainTabs = () => {
         initialParams={{open: true}}
       />
       <Tabs.Screen
-        name={'1'}
-        component={Test}
+        name={Screens.navigators.driverOrdersStack}
+        component={DriverOrderStack}
         options={tabBarOptions({iconName: 'content-paste', size: 30})}
         initialParams={{open: true}}
       />
       <Tabs.Screen
         name={'12'}
-        component={Test}
+        component={() => <></>}
         options={tabBarOptions({iconName: 'insert-drive-file', size: 25})}
         initialParams={{open: true}}
       />
       <Tabs.Screen
         name={'13'}
-        component={Test}
+        component={() => <></>}
         options={tabBarOptions({iconName: 'notifications'})}
         initialParams={{open: true}}
       />
       <Tabs.Screen
         name={'14'}
-        component={Test}
+        component={() => <></>}
         options={tabBarOptions({iconName: 'settings', size: 25})}
         initialParams={{open: true}}
       />

@@ -5,17 +5,20 @@ import {
   ScrollView,
   ScrollViewProps,
   StyleSheet,
+  useWindowDimensions,
   View,
   ViewProps,
 } from 'react-native';
 
 interface TabContentProps extends ViewProps, ScrollViewProps {
   backgroundColor?: string;
+  fullWidth?: boolean;
 }
 
 export const TabContent = memo((props: TabContentProps) => {
   const {children, backgroundColor = false, refreshControl, ...left} = props;
-  const {style, ...rest} = left;
+  const {style, fullWidth, ...rest} = left;
+  const dimensions = useWindowDimensions();
   return (
     <KeyboardAvoidingView
       style={{flex: 1, backgroundColor: 'transparent'}} // Ensure the view takes up full space
@@ -26,7 +29,10 @@ export const TabContent = memo((props: TabContentProps) => {
         keyboardShouldPersistTaps="handled"
         refreshControl={refreshControl}
         style={[!!backgroundColor && {backgroundColor: backgroundColor}]}>
-        <View style={[styles.main, style]}>{children}</View>
+        <View
+          style={[styles.main, fullWidth && {width: dimensions.width}, style]}>
+          {children}
+        </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
