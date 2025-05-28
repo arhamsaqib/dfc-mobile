@@ -1,4 +1,4 @@
-import {Avatar, Card, Margin} from '@src/components';
+import {Avatar, Card, Margin, UploadContainer} from '@src/components';
 import {ScreenWrapper} from '@src/components/ScreenWrapper';
 import {appStyle, ScreenProps} from '@src/constants';
 import {Button, formControl, FormGroup, Text, View} from '@src/core';
@@ -64,6 +64,10 @@ export const ProfileScreen = (props: ScreenProps) => {
             Business Address
           </FormLabel>
           <FormInput control={form.control.address} bordered />
+        </Card>
+        <Margin top={20} />
+        <Card style={{width: '100%'}}>
+          <UploadContainer title="Upload Business Form" />
         </Card>
         <Margin top={20} />
         <Button title="Save" />

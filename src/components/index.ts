@@ -10,3 +10,4 @@ export * from './Margin';
 export * from './RowItem';
 export * from './ScreenWrapper';
 export * from './Tabs';
+export * from './UploadContainer';
