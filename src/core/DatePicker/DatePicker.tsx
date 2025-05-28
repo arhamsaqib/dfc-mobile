@@ -4,8 +4,8 @@ import DP from 'react-native-date-picker';
 
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {Text} from '@src/core/Text';
-import {DateTimeFormats} from '@src/services/formatter/Formatter';
 import Formatter from '@src/services/formatter';
+import {DateTimeFormats} from '@src/services/formatter/formatter';
 
 interface DatePicker {
   value: Date;

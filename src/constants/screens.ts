@@ -2,6 +2,7 @@ const navigators = {
   authStack: 'authStack',
   driverMainTabs: 'driverMainTabs',
   driverOrdersStack: 'driverOrdersStack',
+  settingsStack: 'settingsStack',
 };
 
 export const Screens = {
@@ -11,5 +12,8 @@ export const Screens = {
   driverOrdersScreen: 'driverOrdersScreen',
   driverOrdersDetailsScreen: 'driverOrdersDetailsScreen',
   notificationsScreen: 'notificationsScreen',
+  settingScreen: 'settingsScreen',
+  profileScreen: 'settings.profileScreen',
+  securityScreen: 'settings.securityScreen',
   navigators,
 };
