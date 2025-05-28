@@ -10,5 +10,6 @@ export const Screens = {
   driverDashboard: 'driverDashboardScreen',
   driverOrdersScreen: 'driverOrdersScreen',
   driverOrdersDetailsScreen: 'driverOrdersDetailsScreen',
+  notificationsScreen: 'notificationsScreen',
   navigators,
 };

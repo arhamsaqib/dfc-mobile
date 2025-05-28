@@ -11,6 +11,7 @@ export const Colors = {
 
 export const Theme = {
   primary: Colors.dark_yellow,
+  light_primary: Colors.light_yellow,
   dark_button: Colors.dark_blue,
   inactive_text: '#ADAEBC',
   field_bg: '#D1D5DB',

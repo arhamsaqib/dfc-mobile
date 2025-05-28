@@ -8,6 +8,7 @@ import {Theme} from '@src/constants/colors';
 import {Icon} from '@src/core/Icon';
 import {DriverDashboardScreen} from '@src/modules/driver/Dashboard/DriverDashboardScreen';
 import {DriverOrderStack} from './DriverOrderStack';
+import {NotificationScreen} from '@src/modules/common/NotificationScreen';
 
 const Tabs = createBottomTabNavigator();
 interface TabBarOptionsProps {
@@ -73,8 +74,8 @@ export const DriverMainTabs = () => {
         initialParams={{open: true}}
       />
       <Tabs.Screen
-        name={'13'}
-        component={() => <></>}
+        name={Screens.notificationsScreen}
+        component={NotificationScreen}
         options={tabBarOptions({iconName: 'notifications'})}
         initialParams={{open: true}}
       />
