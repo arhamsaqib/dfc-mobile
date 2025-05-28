@@ -27,4 +27,6 @@ export const Theme = {
   black: Colors.black,
   button_light: '#E5E7EB',
   badge_info: Colors.blue,
+  grey1: '#6B7280',
+  success_bright: '#32E453',
 };

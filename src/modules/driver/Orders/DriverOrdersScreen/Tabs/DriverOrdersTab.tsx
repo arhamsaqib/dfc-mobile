@@ -5,6 +5,8 @@ import {View} from '@src/core/View';
 import React, {useEffect} from 'react';
 import {StyleSheet} from 'react-native';
 import {DriverOrderItem} from '../components/DriverOrderItem';
+import {useNavigation} from '@react-navigation/native';
+import {Screens} from '@src/constants/screens';
 
 function defineDriverOrderTabForm() {
   return new FormGroup({
@@ -22,6 +24,7 @@ interface TabProps {
 export const DriverOrdersTab = (props: TabProps) => {
   const {isCompleted = false} = props;
   const form = defineDriverOrderTabForm();
+  const navigation = useNavigation();
 
   return (
     <TabContent fullWidth>
@@ -32,7 +35,12 @@ export const DriverOrdersTab = (props: TabProps) => {
             control={form.control.search}
           />
         </View>
-        <DriverOrderItem isCompleted={isCompleted} />
+        <DriverOrderItem
+          isCompleted={isCompleted}
+          onPress={() =>
+            (navigation as any).push(Screens.driverOrdersDetailsScreen)
+          }
+        />
         <DriverOrderItem isCompleted={isCompleted} />
       </View>
     </TabContent>

@@ -9,5 +9,6 @@ export const Screens = {
   register: 'registerScreen',
   driverDashboard: 'driverDashboardScreen',
   driverOrdersScreen: 'driverOrdersScreen',
+  driverOrdersDetailsScreen: 'driverOrdersDetailsScreen',
   navigators,
 };
