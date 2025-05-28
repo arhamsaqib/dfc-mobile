@@ -26,6 +26,7 @@ export interface MyTIProps extends TextInputProps {
   light?: boolean;
   inputType?: 'text' | 'number';
   type?: 'rounded' | 'squared';
+  bordered?: boolean;
 }
 
 export const TextInput = (props: MyTIProps) => {
@@ -46,6 +47,7 @@ export const TextInput = (props: MyTIProps) => {
     light = false,
     inputType,
     type = 'squared',
+    bordered = false,
     ...rest
   } = props;
 
@@ -86,6 +88,7 @@ export const TextInput = (props: MyTIProps) => {
           styles.main,
           textarea && {height: 162},
           {borderRadius, backgroundColor},
+          bordered && styles.border,
           mainContainerStyle,
         ]}>
         {icon && (
@@ -190,5 +193,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     borderColor: '#E2E2E2',
     borderWidth: 1,
+  },
+  border: {
+    borderWidth: 0.7,
+    borderColor: Theme.inactive_text,
   },
 });

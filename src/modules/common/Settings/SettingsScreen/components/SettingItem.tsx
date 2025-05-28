@@ -14,7 +14,7 @@ export const SettingItem = (props: SettingItemProps) => {
   const {title, icon, onPress} = props;
 
   return (
-    <TouchableOpacity style={[styles.main]}>
+    <TouchableOpacity onPress={onPress} style={[styles.main]}>
       {icon && <Icon {...icon} color={Theme.primary} size={25} />}
       <Text style={[styles.text, icon && {marginLeft: 10}]}>{title}</Text>
     </TouchableOpacity>
